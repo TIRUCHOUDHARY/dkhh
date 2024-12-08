@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Auto-Play Video with Sound</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <video id="videoPlayer" class="video" autoplay loop>
+            <source src="latest-punjabi-songs-2023---bachke-bachke-full-video-karan-aujla-i-ikky.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    // Start playing the video as soon as the page loads
+    videoPlayer.play();
+
+    // Disable video controls
+    videoPlayer.controls = false;
+
+    // Request full-screen mode as soon as the page loads
+    if (videoPlayer.requestFullscreen) {
+        videoPlayer.requestFullscreen();
+    } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+        videoPlayer.mozRequestFullScreen();
+    } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        videoPlayer.webkitRequestFullscreen();
+    } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+        videoPlayer.msRequestFullscreen();
+    }
+
+    // Optional: Handle fullscreen change events (optional)
+    document.addEventListener("fullscreenchange", function () {
+        console.log("Entered fullscreen mode");
+    });
+};
+
+    </script>
+</body>
+</html>

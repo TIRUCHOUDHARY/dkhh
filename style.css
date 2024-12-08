@@ -1,0 +1,32 @@
+/* Fullscreen video styling */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide the scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container to hold content */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make the video cover the entire screen */
+.video {
+    object-fit: cover; /* Ensures the video covers the screen without stretching */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* Optional: Styling for body background */
+body {
+    background-color: #000;
+}
